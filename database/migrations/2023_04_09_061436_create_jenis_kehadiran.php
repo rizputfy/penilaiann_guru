@@ -14,10 +14,14 @@ class CreateJenisKehadiran extends Migration
     public function up()
     {
         Schema::create('jenis_kehadiran', function (Blueprint $table) {
-            $table->id();
-            $table->integer('id_kehadiran')->unique();
+            $table->id('id_jenis_kehadiran')->unsigned()->primary('id_jenis_kehadiran');
             $table->string('jenis_kehadiran');
             $table->timestamps();
+
+            $table->foreign('id_jenis_kehadiran')
+                  ->references('id')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
         });
     }
 
