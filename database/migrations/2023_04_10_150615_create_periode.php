@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJenisKehadiran extends Migration
+class CreatePeriode extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateJenisKehadiran extends Migration
      */
     public function up()
     {
-        Schema::create('jenis_kehadiran', function (Blueprint $table) {
-            $table->id('id_jenis_kehadiran');
-            $table->string('nama_kehadiran');
+        Schema::create('periode', function (Blueprint $table) {
+            $table->id('periode');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateJenisKehadiran extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenis_kehadiran');
+        Schema::dropIfExists('periode');
     }
 }
