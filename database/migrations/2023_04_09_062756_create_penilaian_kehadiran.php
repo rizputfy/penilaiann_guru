@@ -16,8 +16,8 @@ class CreatePenilaianKehadiran extends Migration
         Schema::create('penilaian_kehadiran', function (Blueprint $table) {
             $table->id();
             $table->float('skor');
-            $table->bigInteger('id_jenis_kehadirans')->unsigned();
-            $table->bigInteger('id_penilaians')->unsigned();
+            $table->foreign('id_penilaian')->constrained();
+            $table->foreign('id_jenis_kehadiran')->references('id')->on('jenis_kehadiiran');
             $table->timestamps();
         });
         Schema::table('penilaian_kehadiran', function (Blueprint $table) {
