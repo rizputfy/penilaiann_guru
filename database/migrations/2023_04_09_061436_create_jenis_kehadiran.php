@@ -14,7 +14,8 @@ class CreateJenisKehadiran extends Migration
     public function up()
     {
         Schema::create('jenis_kehadiran', function (Blueprint $table) {
-            $table->id('id_jenis_kehadiran');
+            $table->id();
+            $table->bigInteger('id_jenis_kehadian')->unsigned();
             $table->string('nama_kehadiran');
             $table->timestamps();
         });

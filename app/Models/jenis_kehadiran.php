@@ -10,10 +10,9 @@ class jenis_kehadiran extends Model
     use HasFactory;
 
     protected $table = 'jenis_kehadiran';
-    protected $primaryKey = 'id_jenis_kehadiran';
-    protected $fillable = ['id_jenis_kehadiran', 'jenis_kehadiran'];
+    protected $fillable = ['nama_kehadiran'];
 
-    public function kehadiran(){
-        return $this->belongsTo('App\Models\penilaian_kehadiran', 'id');
+    public function penilaian_kehadiran(){
+        return $this->hasMany('App\Models\penilaian_kehadiran', 'id_jenis_kehadiran');
     }
 }
