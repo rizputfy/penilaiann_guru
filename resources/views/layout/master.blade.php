@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible">
         <meta name="viewport" content="IE-Edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sewa Buku</title>
+        <title>Penilaian Guru</title>
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     </head>
     <body>

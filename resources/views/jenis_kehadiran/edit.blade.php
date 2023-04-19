@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('content')
 <div class="container">
-    <h4>Edit Data Peminjam</h4>
+    <h4>Edit Data Jenis Kehadiran</h4>
     <form method="POST" action="{{ route('jenis_kehadiran.update', $jenis_kehadiran->id) }}">
         @csrf
         <div class="form-group">

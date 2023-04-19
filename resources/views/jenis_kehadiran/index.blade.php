@@ -1,14 +1,15 @@
 @extends('layout.master')
 @section('content')
 <div class="container">
-    <h4>Data Peminjam</h4>
-    <p align="right"><a href="{{ route('jenis_kehadiran.create') }}" class="btn btn-primary">Tambah Data Peminjam</a></p>
+    <h4>Data Jenis Kehadiran</h4>
+    <p align="right"><a href="{{ route('jenis_kehadiran.create') }}" class="btn btn-primary">Tambahkan Jenis Kehadiran</a></p>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Kode Peminjam</th>
-                <th>Edit</th>
+                <th>Jenis Kehadiran</th>
+                <th>Edit Data</th>
+                <th>Hapus Data</th>
         </tr>
     </thead>
     <tbody>
