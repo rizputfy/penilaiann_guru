@@ -16,13 +16,12 @@ use App\Http\Controllers\JenisKehadiranController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('');
 });
 
 Route::get('penilaian_kehadiran', 'App\Http\Controllers\PenilaianKehadiranController@index');
 
 Route::get('penilaian_kehadiran.create', 'App\Http\Controllers\PenilaianKehadiranController@create');
-
 
 Route::get('jenis_kehadiran', 'App\Http\Controllers\JenisKehadiranController@index');
 
