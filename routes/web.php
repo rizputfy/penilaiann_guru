@@ -16,7 +16,7 @@ use App\Http\Controllers\JenisKehadiranController;
 */
 
 Route::get('/', function () {
-    return view('');
+    return view('home');
 });
 
 Route::get('penilaian_kehadiran', 'App\Http\Controllers\PenilaianKehadiranController@index');
@@ -34,3 +34,27 @@ Route::get('jenis_kehadiran/edit/{id}', 'App\Http\Controllers\JenisKehadiranCont
 Route::post('jenis_kehadiran/update/{id}', 'App\Http\Controllers\JenisKehadiranController@update')->name('jenis_kehadiran.update');
 
 Route::post('jenis_kehadiran/delete/{id}', 'App\Http\Controllers\JenisKehadiranController@destroy')->name('jenis_kehadiran.destroy');
+
+Route::get('unit', 'App\Http\Controllers\UnitController@index');
+
+Route::get('unit/create', 'App\Http\Controllers\UnitController@create')->name('unit.create');
+
+Route::post('unit/store', 'App\Http\Controllers\UnitController@store')->name('unit.store');
+
+Route::get('unit/edit/{id}', 'App\Http\Controllers\UnitController@edit')->name('unit.edit');
+
+Route::post('unit/update/{id}', 'App\Http\Controllers\UnitController@update')->name('unit.update');
+
+Route::post('unit/delete/{id}', 'App\Http\Controllers\UnitController@destroy')->name('unit.destroy');
+
+Route::get('periode', 'App\Http\Controllers\PeriodeController@index');
+
+Route::get('periode/create', 'App\Http\Controllers\PeriodeController@create')->name('periode.create');
+
+Route::post('periode/store', 'App\Http\Controllers\PeriodeController@store')->name('periode.store');
+
+Route::get('periode/edit/{id}', 'App\Http\Controllers\PeriodeController@edit')->name('periode.edit');
+
+Route::post('periode/update/{id}', 'App\Http\Controllers\PeriodeController@update')->name('periode.update');
+
+Route::post('periode/delete/{id}', 'App\Http\Controllers\PeriodeController@destroy')->name('periode.destroy');
