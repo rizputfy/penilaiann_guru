@@ -13,6 +13,6 @@ class Unit extends Model
     protected $fillable = ['nama_unit'];
 
     public function unit(){
-        return $this->hasMany('App\Models\Guru', 'id');
+        return $this->hasMany('App\Models\Guru', 'id_unit');
     }
 }

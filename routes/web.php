@@ -54,3 +54,69 @@ Route::get('periode/edit/{id}', 'App\Http\Controllers\PeriodeController@edit')->
 Route::post('periode/update/{id}', 'App\Http\Controllers\PeriodeController@update')->name('periode.update');
 
 Route::post('periode/delete/{id}', 'App\Http\Controllers\PeriodeController@destroy')->name('periode.destroy');
+
+//jenis aksi nyata
+Route::get('jenis_aksi_nyata', 'App\Http\Controllers\JenisAksiNyataController@index');
+
+Route::get('jenis_aksi_nyata/create', 'App\Http\Controllers\JenisAksiNyataController@create')->name('jenis_aksi_nyata.create');
+
+Route::post('jenis_aksi_nyata/store', 'App\Http\Controllers\JenisAksiNyataController@store')->name('jenis_aksi_nyata.store');
+
+Route::get('jenis_aksi_nyata/edit/{id}', 'App\Http\Controllers\JenisAksiNyataController@edit')->name('jenis_aksi_nyata.edit');
+
+Route::post('jenis_aksi_nyata/update/{id}', 'App\Http\Controllers\JenisAksiNyataController@update')->name('jenis_aksi_nyata.update');
+
+Route::post('jenis_aksi_nyata/delete/{id}', 'App\Http\Controllers\JenisAksiNyataController@destroy')->name('jenis_aksi_nyata.destroy');
+
+//jenis pembelajaran
+Route::get('jenis_pembelajaran', 'App\Http\Controllers\JenisPembelajaranController@index');
+
+Route::get('jenis_pembelajaran/create', 'App\Http\Controllers\JenisPembelajaranController@create')->name('jenis_pembelajaran.create');
+
+Route::post('jenis_pembelajaran/store', 'App\Http\Controllers\JenisPembelajaranController@store')->name('jenis_pembelajaran.store');
+
+Route::get('jenis_pembelajaran/edit/{id}', 'App\Http\Controllers\JenisPembelajaranController@edit')->name('jenis_pembelajaran.edit');
+
+Route::post('jenis_pembelajaran/update/{id}', 'App\Http\Controllers\JenisPembelajaranController@update')->name('jenis_pembelajaran.update');
+
+Route::post('jenis_pembelajaran/delete/{id}', 'App\Http\Controllers\JenisPembelajaranController@destroy')->name('jenis_pembelajaran.destroy');
+
+//jabatan struktural
+Route::get('jabatan_struktural', 'App\Http\Controllers\JabatanStrukturalController@index');
+
+Route::get('jabatan_struktural/create', 'App\Http\Controllers\JabatanStrukturalController@create')->name('jabatan_struktural.create');
+
+Route::post('jabatan_struktural/store', 'App\Http\Controllers\JabatanStrukturalController@store')->name('jabatan_struktural.store');
+
+Route::get('jabatan_struktural/edit/{id}', 'App\Http\Controllers\JabatanStrukturalController@edit')->name('jabatan_struktural.edit');
+
+Route::post('jabatan_struktural/update/{id}', 'App\Http\Controllers\JabatanStrukturalController@update')->name('jabatan_struktural.update');
+
+Route::post('jabatan_struktural/delete/{id}', 'App\Http\Controllers\JabatanStrukturalController@destroy')->name('jabatan_struktural.destroy');
+
+
+//penilaian aksi nyata
+Route::get('penilaian_aksi_nyata', 'App\Http\Controllers\PenilaianAksiNyataController@index');
+
+Route::get('penilaian_aksi_nyata/create', 'App\Http\Controllers\PenilaianAksiNyataController@create')->name('penilaian_aksi_nyata.create');
+
+Route::post('penilaian_aksi_nyata/store', 'App\Http\Controllers\PenilaianAksiNyataController@store')->name('penilaian_aksi_nyata.store');
+
+Route::get('penilaian_aksi_nyata/edit/{id}', 'App\Http\Controllers\PenilaianAksiNyataController@edit')->name('penilaian_aksi_nyata.edit');
+
+Route::post('penilaian_aksi_nyata/update/{id}', 'App\Http\Controllers\PenilaianAksiNyataController@update')->name('penilaian_aksi_nyata.update');
+
+Route::post('penilaian_aksi_nyata/delete/{id}', 'App\Http\Controllers\PenilaianAksiNyataController@destroy')->name('penilaian_aksi_nyata.destroy');
+
+// guru
+Route::get('guru', 'App\Http\Controllers\GuruController@index');
+
+Route::get('guru/create', 'App\Http\Controllers\GuruController@create')->name('guru.create');
+
+Route::post('guru/store', 'App\Http\Controllers\GuruController@store')->name('guru.store');
+
+Route::get('guru/edit/{id}', 'App\Http\Controllers\GuruController@edit')->name('guru.edit');
+
+Route::post('guru/update/{id}', 'App\Http\Controllers\GuruController@update')->name('guru.update');
+
+Route::post('guru/delete/{id}', 'App\Http\Controllers\GuruController@destroy')->name('guru.destroy');
