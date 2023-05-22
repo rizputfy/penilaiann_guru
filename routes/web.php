@@ -19,10 +19,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('penilaian_kehadiran', 'App\Http\Controllers\PenilaianKehadiranController@index');
-
-Route::get('penilaian_kehadiran.create', 'App\Http\Controllers\PenilaianKehadiranController@create');
-
 Route::get('jenis_kehadiran', 'App\Http\Controllers\JenisKehadiranController@index');
 
 Route::get('jenis_kehadiran/create', 'App\Http\Controllers\JenisKehadiranController@create')->name('jenis_kehadiran.create');
