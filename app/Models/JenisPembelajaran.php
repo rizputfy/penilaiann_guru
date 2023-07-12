@@ -10,4 +10,8 @@ class JenisPembelajaran extends Model
     use HasFactory;
     protected $table = 'jenis_pembelajaran';
     protected $fillable = ['nama_pembelajaran'];
+
+    public function penilaian_pembelajaran(){
+        return $this->hasMany('App\Models\PenilaianPembelajaran', 'id_jenis_penilaian');
+    }
 }

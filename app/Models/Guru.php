@@ -18,4 +18,8 @@ class Guru extends Model
     public function jabatan_struktural(){
         return $this->belongsTo('App\Models\JabatanStruktural', 'id');
     }
+
+    public function penilaian(){
+        return $this->hasMany('App\Models\Penilaian', 'id_guru');
+    }
 }

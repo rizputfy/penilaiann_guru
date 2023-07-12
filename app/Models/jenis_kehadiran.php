@@ -13,6 +13,6 @@ class jenis_kehadiran extends Model
     protected $fillable = ['nama_kehadiran'];
 
     public function penilaian_kehadiran(){
-        return $this->hasMany('App\Models\penilaian_kehadiran', 'id_jenis_kehadiran');
+        return $this->hasMany('App\Models\PenilaianKehadiran', 'id_jenis_kehadiran');
     }
 }
