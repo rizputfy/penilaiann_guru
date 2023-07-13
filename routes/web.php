@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+//Jenis Kehadiran
 Route::get('jenis_kehadiran', 'App\Http\Controllers\JenisKehadiranController@index');
 
 Route::get('jenis_kehadiran/create', 'App\Http\Controllers\JenisKehadiranController@create')->name('jenis_kehadiran.create');
@@ -32,6 +33,7 @@ Route::post('jenis_kehadiran/update/{id}', 'App\Http\Controllers\JenisKehadiranC
 
 Route::post('jenis_kehadiran/delete/{id}', 'App\Http\Controllers\JenisKehadiranController@destroy')->name('jenis_kehadiran.destroy');
 
+//Unit
 Route::get('unit', 'App\Http\Controllers\UnitController@index');
 
 Route::get('unit/create', 'App\Http\Controllers\UnitController@create')->name('unit.create');
@@ -44,6 +46,7 @@ Route::post('unit/update/{id}', 'App\Http\Controllers\UnitController@update')->n
 
 Route::post('unit/delete/{id}', 'App\Http\Controllers\UnitController@destroy')->name('unit.destroy');
 
+//Periode
 Route::get('periode', 'App\Http\Controllers\PeriodeController@index');
 
 Route::get('periode/create', 'App\Http\Controllers\PeriodeController@create')->name('periode.create');
@@ -121,7 +124,3 @@ Route::get('guru/edit/{id}', 'App\Http\Controllers\GuruController@edit')->name('
 Route::post('guru/update/{id}', 'App\Http\Controllers\GuruController@update')->name('guru.update');
 
 Route::post('guru/delete/{id}', 'App\Http\Controllers\GuruController@destroy')->name('guru.destroy');
-
-
-//penilaian
-Route::get('penilaian', 'App\Http\Controllers\PenilaianController@index');
