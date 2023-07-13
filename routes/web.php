@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\JenisKehadiranController;
+use App\Http\Controllers\PenilaianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,3 +121,7 @@ Route::get('guru/edit/{id}', 'App\Http\Controllers\GuruController@edit')->name('
 Route::post('guru/update/{id}', 'App\Http\Controllers\GuruController@update')->name('guru.update');
 
 Route::post('guru/delete/{id}', 'App\Http\Controllers\GuruController@destroy')->name('guru.destroy');
+
+
+//penilaian
+Route::get('penilaian', 'App\Http\Controllers\PenilaianController@index');
