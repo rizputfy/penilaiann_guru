@@ -13,6 +13,6 @@ class PenilaianAksiNyata extends Model
     protected $table = 'penilaian_aksi_nyata';
 
     public function jenis_aksi_nyata(){
-        return $this->belongsTo('App\Models\JenisAksiNyata', 'id');
+        return $this->belongsTo('App\Models\JenisAksiNyata', 'id_jenis_aksi');
     }
 }

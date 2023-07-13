@@ -44,7 +44,7 @@ class PenilaianAksiNyataController extends Controller
         $penilaian_aksi_nyata->link_vidio = $request->link_vidio;
         $penilaian_aksi_nyata->link_dokumentasi = $request->link_dokumentasi;
         $penilaian_aksi_nyata->volume = $request->volume;
-        $penilaian_aksi_nyata->id = $request->id;
+        $penilaian_aksi_nyata->id_jenis_aksi = $request->id_jenis_aksi;
         $penilaian_aksi_nyata->update();
         return redirect('penilaian_aksi_nyata');
     }

@@ -12,10 +12,10 @@ class Guru extends Model
     protected $table = 'guru';
 
     public function unit(){
-        return $this->belongsTo('App\Models\Unit', 'id');
+        return $this->belongsTo('App\Models\Unit', 'id_unit');
     }
 
     public function jabatan_struktural(){
-        return $this->belongsTo('App\Models\JabatanStruktural', 'id');
+        return $this->belongsTo('App\Models\JabatanStruktural', 'id_jabatan_struktural');
     }
 }

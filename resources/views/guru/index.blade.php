@@ -26,13 +26,13 @@
             <td>{{ $gurus->alamat}}</td>
             <td>{{ $gurus->unit['nama_unit'] }}</td>
             <td>{{ $gurus->jabatan_struktural['nama_struktural'] }}</td>
-            {{-- <td><a href="{{ route('penilaian_aksi_nyata.edit', $penilaian_aksi_nyatas->id) }}" class="btn btn-warning btn-sm">Edit</a></td> --}}
-            {{-- <td>
-                <form action="{{ route('penilaian_aksi_nyata.destroy', $penilaian_aksi_nyatas->id) }}" method="POST">
+            <td><a href="{{ route('guru.edit', $gurus->id) }}" class="btn btn-warning btn-sm">Edit</a></td>
+            <td>
+                <form action="{{ route('guru.destroy', $gurus->id) }}" method="POST">
                     @csrf
                     <button class="btn btn-warning btn-sm" onClick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
                 </form>
-            </td> --}}
+            </td>
         </tr>
         @endforeach 
     </tbody>

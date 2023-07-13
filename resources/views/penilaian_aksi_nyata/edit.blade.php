@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label>Jenis aksi</label>
-                <select name="id_jenis_kelamin" >
+                <select name="id_jenis_aksi" >
                     <option value="">Pilih jenis aksi nyata</option>
                     @foreach ($list_jenis_aksi_nyata as $key => $value)
                     <option value="{{ $key }}" {{ $penilaian_aksi_nyata->id == $key ? 'selected' : ''}}>

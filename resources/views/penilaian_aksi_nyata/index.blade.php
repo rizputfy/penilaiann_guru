@@ -27,7 +27,7 @@
             <td>{{ $penilaian_aksi_nyatas->link_vidio}}</td>
             <td>{{ $penilaian_aksi_nyatas->link_dokumentasi}}</td>
             <td>{{ $penilaian_aksi_nyatas->volume}}</td>
-            <td>{{ $penilaian_aksi_nyatas->jenis_aksi_nyata['nama_aksi_nyata'] }}</td>
+            <td>{{ $penilaian_aksi_nyatas->jenis_aksi_nyata['nama_aksi_nyata']}}</td>
             <td><a href="{{ route('penilaian_aksi_nyata.edit', $penilaian_aksi_nyatas->id) }}" class="btn btn-warning btn-sm">Edit</a></td>
             <td>
                 <form action="{{ route('penilaian_aksi_nyata.destroy', $penilaian_aksi_nyatas->id) }}" method="POST">

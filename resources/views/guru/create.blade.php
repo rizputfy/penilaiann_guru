@@ -2,7 +2,7 @@
 @section('content')
     <div>
         <h4>Tambah Data penilaian aksi nyata</h4>
-        <form method="POST" action="{{ route('penilaian_aksi_nyata.store') }}">
+        <form method="POST" action="{{ route('guru.store') }}">
             @csrf
             <div class="form-group">
                 <label>nip</label><input type="text" name="nip" class="form-control">
@@ -17,8 +17,8 @@
             </div>
             <div class="form-group">
                 <label>Jenis unit</label>
-                <select name="id_jenis_aksi" class="form-control">
-                    <option value="">Pilih Jenis aksi</option>
+                <select name="id_unit" class="form-control">
+                    <option value="">unit</option>
                     @foreach ($list_unit as $key => $value)
                     <option value="{{ $key }}">
                         {{ $value }}
@@ -28,8 +28,8 @@
             </div>
             <div class="form-group">
                 <label>Jabatan strruktural</label>
-                <select name="id_jenis_aksi" class="form-control">
-                    <option value="">Pilih Jenis aksi</option>
+                <select name="id_jabatan_struktural" class="form-control">
+                    <option value="">jabatan struktural</option>
                     @foreach ($list_jabatan_struktural as $key => $value)
                     <option value="{{ $key }}">
                         {{ $value }}
