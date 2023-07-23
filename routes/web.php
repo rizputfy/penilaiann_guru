@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\JenisKehadiranController;
-use App\Http\Controllers\PenilaianController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +14,14 @@ use App\Http\Controllers\PenilaianController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 
 //Jenis Kehadiran
 Route::get('jenis_kehadiran', 'App\Http\Controllers\JenisKehadiranController@index');
@@ -124,3 +127,11 @@ Route::get('guru/edit/{id}', 'App\Http\Controllers\GuruController@edit')->name('
 Route::post('guru/update/{id}', 'App\Http\Controllers\GuruController@update')->name('guru.update');
 
 Route::post('guru/delete/{id}', 'App\Http\Controllers\GuruController@destroy')->name('guru.destroy');
+
+
+Route::get('penilaian', 'App\Http\Controllers\PenilaianController@index');
+
+Route::get('penilaian/create', 'App\Http\Controllers\PenilaianController@create')->name('penilaian.create');
+
+Route::get('penilaian/home', 'App\Http\Controllers\PenilaianController@home')->name('penilaian.home');
+

@@ -1,46 +1,175 @@
 @extends('layout.master')
 @section('content')
-<div class="card md-4 mb-4 mt-4">
-    <h4>Masukkan Nilai untuk Penilaian Kehadiran</h4>
-    <form method="POST" action="">
-        @csrf
-        <div class="form-group">
-            <label>skor</label><input type="text" name="skor" class="form-control">
-        </div>
-        <div class="form-group">
-                <label>Jenis Kehadiran</label>
-                <select name="id_jenis_kehadiran" class="form-control">
-                    <option value="">Pilih Jenis Kehadiran</option>
-                    @foreach ($list_penilaian_kehadiran as $key => $value)
-                    <option value="{{ $key }}">
-                        {{ $value }}
-                    </option>
-                    @endforeach
-                </select>
+
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    {{-- <div>
+        <h4>Tambah Data penilaian aksi nyata</h4>
+        <form method="POST">
+            @csrf
+            <div class="form-group">
+                <label>skor</label><input type="text" name="skor_aksi_nyata" class="form-control">
             </div>
-            <div></div>
+            <div class="form-group">
+                <label>nama deskripsi</label>
+                <input type="text" name="deskripsi" class="form-control">
+            </div>
+            <div class="fo    rm-group">
+                <label>Jenis aksi nyata</label>
+                <select name="id_jenis_aksi" class="form-control">
+                    <option value="">Pilih Jenis aksi</option>
+                    @foreach ($list_jenis_aksi_nyata as $key => $value)
+                    <option value="{{ $key }}">
+    {{ $value }}
+    </option>
+    @endforeach
+    </select>
+    </div>
+    <div class="form-group">
+        <label>link vidio</label>
+        <input type="text" name="link_vidio" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>link dokumentasi</label>
+        <textarea name="link_dokumentasi"></textarea>
+    </div>
+    <div class="form-group">
+        <label>volume</label>
+        <input type="text" name="volume" class="form-control">
+    </div>
+    <div>
+        <button type="submit">Simpan</button>
+    </div>
     </form>
-</div>
+    </div> --}}
+    <div class="container p-3 my-3 border">
+        <h1 class="text-center">Form Penilaian Guru</h1>
+        <form id="form" method="post">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Guru :</label>
+                <div class="col-sm-4">
+                    <input type="text" name="guru" class="form-control">
+                </div>
+                <label class="col-sm-2 col-form-label">NIP :</label>
+                <div class="col-sm-4">
+                    <input type="text" name="nip" class="form-control">
+                </div>
+            </div>
 
-<div class="row md-4 mb-4 mt-4">
-<h4>Masukkan Nilai untuk Penilaian Aksi Nyata</h4>
+            <div class="alert alert-primary">
+                <strong>Penilaian Kehadiran</strong>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Di Sekolah</label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="skor_aksi_nyata" class="form-control form-control-sm text-right item">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Kelas </label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Pembinaan </label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Lesson Study </label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Rapat </label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                </div>
+            </div>
 
-    <form method="POST" action="">
-        @csrf
-        <div class="form-group">
-            <label>skor</label><input type="text" name="skor" class="form-control">
-        </div>
-    </form>
-</div>
-<div class="row md-4 mb-4 mt-4">
-<h4>Masukkan Nilai untuk Penilaian Pembelajaran</h4>
+            <div class="alert alert-primary">
+                <strong>Penilaian Pembelajaran</strong>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Di Sekolah </label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Kelas </label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Pembinaan</label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Lesson Study </label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Rapat </label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                </div>
+            </div>
 
+            <div class="alert alert-primary">
+                <strong>Aksi Nyata</strong>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Jenis Aksi Nyata</label>
+                        <select name="id_jenis_aksi" class="form-control">
+                            <option value="">Pilih Jenis aksi</option>
+                            @foreach ($list_jenis_aksi_nyata as $key => $value)
+                            <option value="{{ $key }}">
+                                {{ $value }}
+                            </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Link Dokumentasi</label>
+                        <input type="text" name="sekolah" class="form-control" placeholder="Masukan Link Dokumentasi">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Penilaian</label>
+                        <input type="text" name="nilai_raport" class="form-control" placeholder="Masukan Penilaian">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <button type="submit" name="Submit" id="Submit" class="btn btn-primary">Daftar</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
 
-    <form method="POST" action="">
-        @csrf
-        <div class="form-group">
-            <label>skor</label><input type="text" name="skor" class="form-control">
-        </div>
-    </form>
-</div>
+            </div>
+        </form>
+    </div>
+</body>
 @endsection
