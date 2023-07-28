@@ -128,10 +128,13 @@ Route::post('guru/update/{id}', 'App\Http\Controllers\GuruController@update')->n
 
 Route::post('guru/delete/{id}', 'App\Http\Controllers\GuruController@destroy')->name('guru.destroy');
 
-
+//Penilaian
 Route::get('penilaian', 'App\Http\Controllers\PenilaianController@index');
 
-Route::get('penilaian/create', 'App\Http\Controllers\PenilaianController@create')->name('penilaian.create');
+Route::get('penilaian/create/{id_periode}', 'App\Http\Controllers\PenilaianController@create')->name('penilaian.create');
 
 Route::get('penilaian/home', 'App\Http\Controllers\PenilaianController@home')->name('penilaian.home');
 
+Route::get('guru/search', 'App\Http\Controllers\GuruController@search')->name('guru.search');
+
+//Route::get('sig/edit/{id}/{ticketid}', 'TicketsController@edit');
