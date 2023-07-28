@@ -160,7 +160,7 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>Rata-rata Nilai Rapor Kelas 12:</label>
-                            <input type="text" name="nilai_raport" class="form-control"
+                            <input type="text" name="nilai" class="form-control"
                                 placeholder="Masukan Rata-rata nilai raport">
                         </div>
                     </div>

@@ -136,5 +136,3 @@ Route::get('penilaian/create/{id_periode}', 'App\Http\Controllers\PenilaianContr
 Route::get('penilaian/home', 'App\Http\Controllers\PenilaianController@home')->name('penilaian.home');
 
 Route::get('guru/search', 'App\Http\Controllers\GuruController@search')->name('guru.search');
-
-//Route::get('sig/edit/{id}/{ticketid}', 'TicketsController@edit');

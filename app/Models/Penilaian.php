@@ -25,7 +25,8 @@ class Penilaian extends Model
         return $this->belongsTo('App\Models\PenilaianAksiNyata', 'id_penilaian_aksi_nyata');
     }
 
-    public function periode(){
+    public function periode()
+    {
         return $this->belongsTo('App\Models\Periode', 'id_periode');
     }
 }

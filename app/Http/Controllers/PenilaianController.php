@@ -18,7 +18,8 @@ class PenilaianController extends Controller
 
     public function create(Request $request)
     { 
-        $id_guru = $request->id_guru;//echo $id_guru;echo "<br>";
+        $id_guru = $request->id_guru;
+        //echo $id_guru;echo "<br>";
         $id_periode = $request->id_periode;//echo $id_periode;echo "<br>";
         $penilaian = Penilaian::all()->where('id_guru', $id_guru);
         $guru = Guru::all()->where('id', $id_guru);//print_r($guru);die();

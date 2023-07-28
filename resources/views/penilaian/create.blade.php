@@ -30,13 +30,13 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Di Sekolah</label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control form-control-sm text-right item">
+                    <input type="text" name="penilaian" class="form-control form-control-sm text-right item">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Kelas </label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                    <input type="text" name="penilaian" class="form-control">
                 </div>
             </div>
             <div class="form-group row">

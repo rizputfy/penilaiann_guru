@@ -44,7 +44,7 @@
                 <td>{{ $penilaian->periode['keterangan_periode'] }}</td>
                 <td><a href="{{ route('penilaian.create', ['id_guru'=>$penilaian->id_guru,'id_periode'=>$penilaian->id_periode]) }}" class="btn btn-primary btn-sm">Beri Nilai</a></td>
                 @endforeach
-                </tbody>
+        </tbody>
     </table>
 </div>
 @endsection
