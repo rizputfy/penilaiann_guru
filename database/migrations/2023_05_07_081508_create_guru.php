@@ -18,6 +18,7 @@ class CreateGuru extends Migration
             $table->string('nip');
             $table->string('nama');
             $table->string('alamat');
+            // $table->string('user_id');
             $table->bigInteger('id_unit')->unsigned();
             $table->bigInteger('id_jabatan_struktural')->unsigned();
             $table->timestamps();
@@ -29,6 +30,8 @@ class CreateGuru extends Migration
 
             $table->foreign('id_jabatan_struktural')->references('id') ->on('jabatan_struktural')
             ->onDelete('cascade')->onUpdate('cascade');
+
+            
           });
     }
 

@@ -11,6 +11,10 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public function unit(){
+        return $this->belongsTo('App\Models\guru', 'id_jabatan_struktural');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

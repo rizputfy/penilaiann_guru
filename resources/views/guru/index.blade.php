@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <h4>Data guru</h4>
-    <p align="right"><a href="{{ route('guru.create') }}" class="btn btn-primary">Tambahkan penilaian aksi nyata</a></p>
+    {{-- <p align="right"><a href="{{ route('guru.create') }}" class="btn btn-primary">Tambahkan penilaian aksi nyata</a></p> --}}
     <table class="table table-striped">
         <thead>
             <tr>

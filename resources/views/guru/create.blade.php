@@ -3,13 +3,14 @@
     <div>
         <h4>Tambah Data penilaian aksi nyata</h4>
         <form method="POST" action="{{ route('guru.store') }}">
+            <input type="hidden" name="user_id" class="form-control" value="{{ $user_id }}">
             @csrf
             <div class="form-group">
                 <label>nip</label><input type="text" name="nip" class="form-control">
             </div>
             <div class="form-group">
                 <label>nama</label>
-                <input type="text" name="nama" class="form-control">
+                <input type="text" name="nama" class="form-control" value="{{ $name }}">
             </div>
             <div class="form-group">
                 <label>alamat</label>

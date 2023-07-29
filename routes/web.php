@@ -116,7 +116,7 @@ Route::post('penilaian_aksi_nyata/update/{id}', 'App\Http\Controllers\PenilaianA
 Route::post('penilaian_aksi_nyata/delete/{id}', 'App\Http\Controllers\PenilaianAksiNyataController@destroy')->name('penilaian_aksi_nyata.destroy');
 
 // guru
-Route::get('guru', 'App\Http\Controllers\GuruController@index');
+Route::get('guru', 'App\Http\Controllers\GuruController@index')->name('guru.index');
 
 Route::get('guru/create', 'App\Http\Controllers\GuruController@create')->name('guru.create');
 
@@ -135,3 +135,15 @@ Route::get('penilaian/create', 'App\Http\Controllers\PenilaianController@create'
 
 Route::get('penilaian/home', 'App\Http\Controllers\PenilaianController@home')->name('penilaian.home');
 
+//user
+Route::get('user', 'App\Http\Controllers\UserController@index')->name('user.index');
+
+Route::get('user/create', 'App\Http\Controllers\userController@create')->name('user.create');
+
+Route::post('user/store', 'App\Http\Controllers\userController@store')->name('user.store');
+
+Route::get('user/edit/{id}', 'App\Http\Controllers\userController@edit')->name('user.edit');
+
+Route::post('user/update/{id}', 'App\Http\Controllers\userController@update')->name('user.update');
+
+Route::post('user/delete/{id}', 'App\Http\Controllers\userController@destroy')->name('user.destroy');

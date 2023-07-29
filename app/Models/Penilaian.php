@@ -10,7 +10,7 @@ class Penilaian extends Model
     use HasFactory;
 
     public function guru(){
-        return $this->belongsTo('App\Models\Guru', 'id_guru');
+        return $this->hasMany('App\Models\Guru', 'id_guru');
     }
 
     public function penilaian_kehadiran(){
