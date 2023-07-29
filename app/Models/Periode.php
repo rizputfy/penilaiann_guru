@@ -15,4 +15,12 @@ class Periode extends Model
     public function unit(){
         return $this->hasMany('App\Models\Penilaian', 'id');
     }
+
+    public function penilaian(){
+        return $this->hasMany('App\Models\Penilaian', 'id_periode');
+    }
+
+    public function guru(){
+        return $this->belongsToMany('App\Models\Guru', 'penilaian', 'id_periode', 'id_guru');
+    }
 }

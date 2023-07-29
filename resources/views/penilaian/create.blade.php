@@ -10,57 +10,17 @@
 </head>
 
 <body>
-
-    {{-- <div>
-        <h4>Tambah Data penilaian aksi nyata</h4>
-        <form method="POST">
-            @csrf
-            <div class="form-group">
-                <label>skor</label><input type="text" name="skor_aksi_nyata" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>nama deskripsi</label>
-                <input type="text" name="deskripsi" class="form-control">
-            </div>
-            <div class="fo    rm-group">
-                <label>Jenis aksi nyata</label>
-                <select name="id_jenis_aksi" class="form-control">
-                    <option value="">Pilih Jenis aksi</option>
-                    @foreach ($list_jenis_aksi_nyata as $key => $value)
-                    <option value="{{ $key }}">
-    {{ $value }}
-    </option>
-    @endforeach
-    </select>
-    </div>
-    <div class="form-group">
-        <label>link vidio</label>
-        <input type="text" name="link_vidio" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>link dokumentasi</label>
-        <textarea name="link_dokumentasi"></textarea>
-    </div>
-    <div class="form-group">
-        <label>volume</label>
-        <input type="text" name="volume" class="form-control">
-    </div>
-    <div>
-        <button type="submit">Simpan</button>
-    </div>
-    </form>
-    </div> --}}
     <div class="container p-3 my-3 border">
         <h1 class="text-center">Form Penilaian Guru</h1>
-        <form id="form" method="post">
+            <form id="form" method="post" action="{{ route('penilaian.create', $id_penilaian) }}">
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Guru :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="guru" class="form-control">
+                    <input type="text" name="guru" class="form-control" value="{{ $guru[0]['nama'] }}">
                 </div>
                 <label class="col-sm-2 col-form-label">NIP :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="nip" class="form-control">
+                    <input type="text" name="nip" class="form-control" value="{{ $guru[0]['nip'] }}">
                 </div>
             </div>
 
@@ -70,13 +30,13 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Di Sekolah</label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control form-control-sm text-right item">
+                    <input type="text" name="penilaian" class="form-control form-control-sm text-right item">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Kelas </label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                    <input type="text" name="penilaian" class="form-control">
                 </div>
             </div>
             <div class="form-group row">

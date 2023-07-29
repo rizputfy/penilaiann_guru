@@ -16,15 +16,27 @@ class CreatePenilaian extends Migration
         Schema::create('penilaian', function (Blueprint $table) {
             $table->id('penilaian');
             $table->string('keterangan');
-            $table->string('periode_penilaian');
             $table->bigInteger('id_periode')->unsigned();
-            $table->integer('penilaian_kehadiran');
             $table->integer('id_guru');
-            $table->integer('id_penilaian_kehadiran');
+            $table->bigInteger('id_penilaian_kehadiran')->unsigned();
+            $table->bigInteger('id_penilaian_pembelajaran')->unsigned();
+            $table->bigInteger('id_penilaian_aksi_nyata')->unsigned();
             $table->timestamps();
         });
         Schema::table('penilaian', function (Blueprint $table) {
             $table->foreign('id_periode')->references('periode') ->on('periode')
+            ->onDelete('cascade')->onUpdate('cascade');
+          });
+        Schema::table('penilaian', function (Blueprint $table) {
+            $table->foreign('id_penilaian_kehadiran')->references('id') ->on('penilaian_kehadiran')
+            ->onDelete('cascade')->onUpdate('cascade');
+          });
+        Schema::table('penilaian', function (Blueprint $table) {
+            $table->foreign('id_penilaian_pembelajaran')->references('id') ->on('penilaian_pembelajaran')
+            ->onDelete('cascade')->onUpdate('cascade');
+          });
+          Schema::table('penilaian', function (Blueprint $table) {
+            $table->foreign('id_penilaian_aksi_nyata')->references('id') ->on('penilaian_aksi_nyata')
             ->onDelete('cascade')->onUpdate('cascade');
           });
     }
