@@ -135,3 +135,19 @@ Route::get('penilaian/create/{id_periode}', 'App\Http\Controllers\PenilaianContr
 
 Route::get('penilaian/home', 'App\Http\Controllers\PenilaianController@home')->name('penilaian.home');
 
+//liat yang ke aski nyata
+Route::get('tampilan_guru', 'App\Http\Controllers\TampilanGuruController@index')->name('tampilan_guru.index');
+
+
+//user
+Route::get('user', 'App\Http\Controllers\UserController@index')->name('user.index');
+
+Route::get('user/create', 'App\Http\Controllers\UserController@create')->name('user.create');
+
+Route::post('user/store', 'App\Http\Controllers\UserController@store')->name('user.store');
+
+Route::get('user/edit/{id}', 'App\Http\Controllers\UserController@edit')->name('user.edit');
+
+Route::post('user/update/{id}', 'App\Http\Controllers\UserController@update')->name('user.update');
+
+Route::post('user/delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('user.destroy');

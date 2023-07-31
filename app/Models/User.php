@@ -15,6 +15,11 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\guru', 'id_jabatan_struktural');
     }
 
+    public function periode()
+    {
+        return $this->belongsTo('App\Models\Periode', 'id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
