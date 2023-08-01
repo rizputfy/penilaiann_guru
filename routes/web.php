@@ -115,6 +115,18 @@ Route::post('penilaian_aksi_nyata/update/{id}', 'App\Http\Controllers\PenilaianA
 
 Route::post('penilaian_aksi_nyata/delete/{id}', 'App\Http\Controllers\PenilaianAksiNyataController@destroy')->name('penilaian_aksi_nyata.destroy');
 
+//penilaian kehadiran 
+Route::get('penilaian_kehadiran', 'App\Http\Controllers\PenilaianKehadiranController@index');
+
+Route::get('penilaian_kehadiran/create', 'App\Http\Controllers\PenilaianKehadiranController@create')->name('PenilaianKehadiran.create');
+
+Route::post('penilaian_kehadiran/store', 'App\Http\Controllers\PenilaianKehadiranController@store')->name('PenilaianKehadiran.store');
+
+Route::get('penilaian_kehadiran/edit/{id}', 'App\Http\Controllers\PenilaianKehadiranController@edit')->name('PenilaianKehadiran.edit');
+
+Route::post('penilaian_kehadiran/update/{id}', 'App\Http\Controllers\PenilaianKehadiranController@update')->name('PenilaianKehadiran.update');
+
+Route::post('penilaian_kehadiran/delete/{id}', 'App\Http\Controllers\PenilaianKehadiranController@destroy')->name('PenilaianKehadiran.destroy');
 // guru
 Route::get('guru', 'App\Http\Controllers\GuruController@index');
 
@@ -131,7 +143,9 @@ Route::post('guru/delete/{id}', 'App\Http\Controllers\GuruController@destroy')->
 //Penilaian
 Route::get('penilaian', 'App\Http\Controllers\PenilaianController@index');
 
-Route::get('penilaian/create/{id_periode}', 'App\Http\Controllers\PenilaianController@create')->name('penilaian.create');
+Route::get('penilaian/create/{id}', 'App\Http\Controllers\PenilaianController@create')->name('penilaian.create');
+
+Route::post('penilaian/store', 'App\Http\Controllers\PenilaianController@store')->name('penilaian.store');
 
 Route::get('penilaian/home', 'App\Http\Controllers\PenilaianController@home')->name('penilaian.home');
 

@@ -12,15 +12,20 @@
 <body>
     <div class="container p-3 my-3 border">
         <h1 class="text-center">Form Penilaian Guru</h1>
-            <form id="form" method="post" action="{{ route('penilaian.create', $id_penilaian) }}">
+        
+ @if($penilaian_aksi_nyata!='[]')    
+        @foreach($penilaian as $penilaian1)
+            <form id="form" method="post" action="{{ route('penilaian.store') }}">
+            <input  type="hidden" name="id_penilaian" class="form-control" value="{{ $penilaian1->id}}">
+            <input type="hidden" name="nip" class="form-control" value="">
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Guru :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="guru" class="form-control" value="{{ $guru[0]['nama'] }}">
+                    <input disabled type="text" name="guru" class="form-control" value="{{ $penilaian1->guru['nama']}}">
                 </div>
                 <label class="col-sm-2 col-form-label">NIP :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="nip" class="form-control" value="{{ $guru[0]['nip'] }}">
+                    <input disabled type="text" name="nip" class="form-control" value="{{ $penilaian1->guru['nip']}}">
                 </div>
             </div>
 
@@ -30,31 +35,32 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Di Sekolah</label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="penilaian" class="form-control form-control-sm text-right item">
+                    <input type="text" name="skor" class="form-control form-control-sm text-right item">
                 </div>
             </div>
-            <div class="form-group row">
+            <!-- <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Kelas </label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="penilaian" class="form-control">
+                    <input type="text" name="penilaiankehadiran2" class="form-control form-control-sm text-right item">
                 </div>
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Pembinaan </label>
-                <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control">
-                </div>
-            </div>
+            
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Lesson Study </label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                    <input type="text" name="penilaiankehadiran3" class="form-control form-control-sm text-right item">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Rapat </label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                    <input type="text" name="penilaianpembelajaran4" class="form-control form-control-sm text-right item">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Pembinaan </label>
+                <div class="col-md-3 mb-2">
+                    <input type="text" name="penilaiankehadiran5" class="form-control form-control-sm text-right item">
                 </div>
             </div>
 
@@ -62,51 +68,44 @@
                 <strong>Penilaian Pembelajaran</strong>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Di Sekolah </label>
+                <label class="col-sm-2 col-form-label">Media </label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                    <input type="text" name="penilaianpembelajaran1" class="form-control form-control-sm text-right item">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Kelas </label>
+                <label class="col-sm-2 col-form-label">Penilaian </label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                    <input type="text" name="penilaianpembelajaran2" class="form-control form-control-sm text-right item">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Pembinaan</label>
+                <label class="col-sm-2 col-form-label">Metoda</label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                    <input type="text" name="penilaianpembelajaran3" class="form-control form-control-sm text-right item">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Lesson Study </label>
+                <label class="col-sm-2 col-form-label">Halaqoh Ilmiah</label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                    <input type="text" name="penilaianpembelajaran4" class="form-control form-control-sm text-right item">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Rapat </label>
+                <label class="col-sm-2 col-form-label">RPP </label>
                 <div class="col-md-3 mb-2">
-                    <input type="text" name="skor_aksi_nyata" class="form-control">
+                    <input type="text" name="penilaianpembelajaran5" class="form-control form-control-sm text-right item">
                 </div>
             </div>
 
             <div class="alert alert-primary">
                 <strong>Aksi Nyata</strong>
-            </div>
+            </div> 
+            @foreach($penilaian_aksi_nyata as $penilaian_aksi_nyata1)
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <label>Jenis Aksi Nyata</label>
-                        <select name="id_jenis_aksi" class="form-control">
-                            <option value="">Pilih Jenis aksi</option>
-                            @foreach ($list_jenis_aksi_nyata as $key => $value)
-                            <option value="{{ $key }}">
-                                {{ $value }}
-                            </option>
-                            @endforeach
-                        </select>
+                    <input type="text" name="sekolah" class="form-control" placeholder="Masukan Link Dokumentasi" value="{{ $penilaian_aksi_nyata1->jenis_aksi_nyata['nama_aksi_nyata'] }}">
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -122,7 +121,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            @endforeach
+            <div class="row"> -->
                 <div class="col-sm-4">
                     <button type="submit" name="Submit" id="Submit" class="btn btn-primary">Daftar</button>
                     <button type="reset" class="btn btn-secondary">Reset</button>
@@ -130,6 +130,10 @@
 
             </div>
         </form>
+        @endforeach
     </div>
+    @else
+        Guru belum input nilai aksi nyata
+    @endif
 </body>
 @endsection

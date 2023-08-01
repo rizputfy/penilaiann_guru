@@ -5,18 +5,10 @@
         <div class="col-sm-6">
             <h4>Periode</h4>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6" >
             <form action="{{ route('guru.search') }}" method="get">@csrf
                 <input type="text" name="keterangan" placeholder="Cari....">
             </form>
-            <select name="id_periode" class="form-control">
-                <option value="">Pilih Periode Pengajaran</option>
-                @foreach ($list_periode as $key => $value)
-                <option value="{{ $key }}">
-                    {{ $value }}
-                </option>
-                @endforeach
-            </select>
         </div>
     </div>
 </div>
@@ -31,7 +23,6 @@
                 <th>Nama</th>
                 <th>Periode</th>
                 <th>Edit Data</th>
-                <th>Hapus Data</th>
             </tr>
         </thead>
         <tbody>
@@ -42,7 +33,13 @@
                 <td>{{ $penilaian->guru['nip']}}</td>
                 <td>{{ $penilaian->guru['nama']}}</td>
                 <td>{{ $penilaian->periode['keterangan_periode'] }}</td>
-                <td><a href="{{ route('penilaian.create', ['id_guru'=>$penilaian->id_guru,'id_periode'=>$penilaian->id_periode]) }}" class="btn btn-primary btn-sm">Beri Nilai</a></td>
+                <td>
+                    @if($penilaian->periode['status']==1)
+                    <a href="{{ route('penilaian.create', ['id'=>$penilaian->id]) }}" class="btn btn-primary btn-sm">Beri Nilai</a></td>
+                    @else
+                        Periode aktif
+                    @endif
+                    </td>  
                 @endforeach
         </tbody>
     </table>
