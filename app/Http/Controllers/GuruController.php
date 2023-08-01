@@ -6,6 +6,7 @@ use App\Models\JabatanStruktural;
 use App\Models\Unit;
 use App\Models\Periode;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class GuruController extends Controller
 {
@@ -28,6 +29,7 @@ class GuruController extends Controller
         $guru->alamat = $request->alamat;
         $guru->id_unit = $request->id_unit; 
         $guru->id_jabatan_struktural = $request->id_jabatan_struktural; 
+        $guru->user_id = $request->user_id;
         $guru->save();
         return redirect('guru');
     }
@@ -47,6 +49,11 @@ class GuruController extends Controller
         $guru->id_unit = $request->id_unit;
         $guru->id_jabatan_struktural = $request->id_jabatan_struktural; 
         $guru->update();
+        $cari_user_id = Guru::where('id', $id)->pluck('user_id');
+        $user = User::where('id', $cari_user_id);
+        $user->update([
+            'name' => $request->nama,
+        ]);
         return redirect('guru');
     }
 

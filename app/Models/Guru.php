@@ -20,7 +20,7 @@ class Guru extends Model
     }
 
     public function penilaian(){
-        return $this->hasMany('App\Models\Penilaian', 'id_guru');
+        return $this->belongsTo('App\Models\Penilaian', 'id_guru');
     }
     
     public function periode(){

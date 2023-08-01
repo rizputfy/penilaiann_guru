@@ -20,7 +20,8 @@ class Periode extends Model
         return $this->hasMany('App\Models\Penilaian', 'id_periode');
     }
 
-    public function guru(){
-        return $this->belongsToMany('App\Models\Guru', 'penilaian', 'id_periode', 'id_guru');
+    public function User()
+    {
+        return $this->belongsToMany('App\Models\User', 'id');
     }
 }
