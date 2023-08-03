@@ -7,6 +7,7 @@ use App\Models\Unit;
 use App\Models\Periode;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class GuruController extends Controller
 {
@@ -19,6 +20,7 @@ class GuruController extends Controller
     public function create(){
         $list_unit = Unit::pluck('nama_unit', 'id');
         $list_jabatan_struktural = JabatanStruktural::pluck('nama_struktural', 'id');
+        $guru = Guru::all();
         return view('guru.create', compact('list_unit','list_jabatan_struktural'));
     }
 
@@ -57,6 +59,21 @@ class GuruController extends Controller
         return redirect('guru');
     }
 
+    public function tampilan_guru(){
+        $guru = Guru::all();
+        
+        if (Auth::check()) {
+            // Mengambil data user yang login
+            $user = Auth::user();
+
+            // Mendapatkan ID dan nama pengguna yang sedang login
+            $user_id = $user->id;//echo $user_id;die();
+            $user_name = $user->name;
+
+            // Menggunakan eager loading untuk mendapatkan data periode
+            $penilaian_list = User::with('periode')->where('id', $user_id)->get();
+        }
+    }
     public function destroy($id){
         $guru = Guru::find($id);
         $guru->delete();

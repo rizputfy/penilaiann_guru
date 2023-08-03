@@ -21,11 +21,11 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Guru :</label>
                 <div class="col-sm-4">
-                    <input disabled type="text" name="guru" class="form-control" value="{{ $penilaian1->guru['nama']}}">
+                    <input disabled type="text" name="guru" class="form-control" value="{{ $penilaian1->guru[0]['nama']}}">
                 </div>
                 <label class="col-sm-2 col-form-label">NIP :</label>
                 <div class="col-sm-4">
-                    <input disabled type="text" name="nip" class="form-control" value="{{ $penilaian1->guru['nip']}}">
+                    <input disabled type="text" name="nip" class="form-control" value="{{ $penilaian1->guru[0]['nip']}}">
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
                     <input type="text" name="skor" class="form-control form-control-sm text-right item">
                 </div>
             </div>
-            <!-- <div class="form-group row">
+            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Kelas </label>
                 <div class="col-md-3 mb-2">
                     <input type="text" name="penilaiankehadiran2" class="form-control form-control-sm text-right item">
@@ -122,7 +122,7 @@
                 </div>
             </div>
             @endforeach
-            <div class="row"> -->
+            <div class="row">
                 <div class="col-sm-4">
                     <button type="submit" name="Submit" id="Submit" class="btn btn-primary">Daftar</button>
                     <button type="reset" class="btn btn-secondary">Reset</button>

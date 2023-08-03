@@ -12,7 +12,7 @@ class Penilaian extends Model
     protected $table = 'penilaian';
 
     public function guru(){
-        return $this->hasMany('App\Models\Guru', 'id_guru');
+        return $this->hasMany('App\Models\Guru', 'id','id_guru');
     }
 
     public function penilaian_kehadiran(){

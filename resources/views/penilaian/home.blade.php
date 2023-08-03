@@ -6,7 +6,7 @@
             <h4>Periode</h4>
         </div>
         <div class="col-sm-6" >
-            <form action="{{ route('guru.search') }}" method="get">@csrf
+            <form action="" method="get">@csrf
                 <input type="text" name="keterangan" placeholder="Cari....">
             </form>
         </div>
@@ -30,8 +30,8 @@
             @foreach($daftar_nilai_guru as $penilaian)
             <tr>
                 <td>{{ $penilaian->id}}</td>
-                <td>{{ $penilaian->guru['nip']}}</td>
-                <td>{{ $penilaian->guru['nama']}}</td>
+                <td>{{ $penilaian->guru[0]['nip']}}</td>
+                <td>{{ $penilaian->guru[0]['nama']}}</td>
                 <td>{{ $penilaian->periode['keterangan_periode'] }}</td>
                 <td>
                     @if($penilaian->periode['status']==1)

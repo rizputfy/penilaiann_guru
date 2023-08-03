@@ -2,15 +2,14 @@
 @section('content')
 <div class="container">
     <h4>Data Jenis Periode</h4>
-    <p align="right"><a href="{{ route('periode.create') }}" class="btn btn-primary">Tambahkan Jenis Periode</a></p>
+    <p align="right"><a href="#" class="btn btn-primary">Tambahkan Jenis Periode</a></p>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>No</th>
                 <th>Keterangan</th>
                 <th>Status Periode</th>
-                <th>Edit Data</th>
-                <th>Hapus Data</th>
+                <th>Lihat Aksi Nyata</th>
             </tr>
         </thead>
         <tbody>
@@ -26,13 +25,7 @@
                     @endif
                 </td>
 
-                <td><a href="{{ route('periode.edit', $periodes->id) }}" class="btn btn-warning btn-sm">Edit</a></td>
-                <td>
-                    <form action="{{ route('periode.destroy', $periodes->id) }}" method="POST">
-                        @csrf
-                        <button class="btn btn-danger btn-sm" onClick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
-                    </form>
-                </td>
+                <td><a href="{{ route('penilaian_aksi_nyata.create') }}" class="btn btn-warning btn-sm">Aksi Nyata</a></td>
             </tr>
             @endforeach
         </tbody>

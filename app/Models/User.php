@@ -19,6 +19,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Periode', 'id');
     }
+    public function guru(){
+        return $this->hasOne('App\Models\Guru', 'user_id');
+    }
 
     /**
      * The attributes that are mass assignable.

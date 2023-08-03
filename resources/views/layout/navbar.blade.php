@@ -9,22 +9,40 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             @if  (Auth::check() && Auth::user()) 
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{{ route('dashboard') }}">penilaian</a>
+                <a class="nav-link" aria-current="page" href="{{ route('dashboard') }}">Penilaian</a>
             </li>
             @endif
             @if (Auth::check() && Auth::user()->level === 'Penilai')
             
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('guru.index') }}">Data Pegawai</a>
+                <a class="nav-link" href="{{ route('guru.index') }}">Data Guru</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('user.index') }}">User</a>
             </li>
             @endif
-            @if (Auth::check() && Auth::user()->level === 'admin')
+            @if (Auth::check() && Auth::user()->level === 'Admin')
             
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('guru.index') }}">Data Pegawai</a>
+                <a class="nav-link" href="{{ route('guru.index') }}">Data Guru</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('user.index') }}">User</a>
+            </li>
+            @endif
+            @if (Auth::check() && Auth::user()->level === 'Yayasan')
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('guru.index') }}">Data Guru</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('user.index') }}">User</a>
+            </li>
+            @endif
+            @if (Auth::check() && Auth::user()->level === 'Kepala Sekolah')
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('guru.index') }}">Guru</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('user.index') }}">User</a>

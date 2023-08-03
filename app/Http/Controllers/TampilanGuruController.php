@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Periode;
+use App\Models\Guru;
+
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +26,11 @@ class TampilanGuruController extends Controller
             $penilaian_list = User::with('periode')->where('id', $user_id)->get();
 
             // Mendapatkan daftar periode untuk pilihan dropdown filter (opsional)
-            $list_periode = Periode::pluck('keterangan', 'id');
+            $list_periode = Periode::pluck('keterangan_periode', 'id');
+
+            $guru = Guru::where('id_user', $user_id);
+            print_r($guru); die();
+
 
             return view('tampilan_guru.index', compact('penilaian_list', 'user_name', 'list_periode'));
         } else {

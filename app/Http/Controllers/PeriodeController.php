@@ -19,7 +19,8 @@ class PeriodeController extends Controller
 
     public function store(Request $request){
         $periode = new periode();
-        $periode->keterangan = $request->keterangan;
+        $periode->keterangan_periode = $request->keterangan_periode;
+        $periode->status = $request->status;
         $periode->save();
         return redirect('periode');
     }
@@ -31,7 +32,8 @@ class PeriodeController extends Controller
 
     public function update(Request $request, $id){
         $periode = periode::find($id);
-        $periode->keterangan = $request->keterangan;
+        $periode->keterangan_periode = $request->keterangan_periode;
+        $periode->status = $request->status;
         $periode->update();
         return redirect('periode');
     }

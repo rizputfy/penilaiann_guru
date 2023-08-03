@@ -22,6 +22,7 @@ class PenilaianController extends Controller
 
     public function create($id)
     { 
+        //echo $id;die();
         $penilaian = Penilaian::all()->where('id', $id);
         $penilaian_aksi_nyata = PenilaianAksiNyata::all()->where('id_penilaian', $id);//print_r($penilaian_aksi_nyata);die();
         $list_jenis_aksi_nyata = JenisAksiNyata::pluck('nama_aksi_nyata');
@@ -38,14 +39,13 @@ class PenilaianController extends Controller
         return redirect('penilaian.home');
     }
     public function home(){
-        $daftar_nilai_guru = Penilaian::all();
-        //$id_daftar_nilai_guru = $daftar_nilai_guru[0];print_r($id_daftar_nilai_guru);die();
-        //$penilaian_aksi_nyata = PenilaianAksiNyata::all()->where('id_penilaian', $id);
-        // print_r($daftar_nilai_guru );die();
-        // $id_penilaian = $daftar_nilai_guru[0]['id'];//die();
-        // $daftar_penilaian_aksi_nyata_id = PenilaianAksiNyata::all()->where('id', $id_penilaian);
-        // $daftar_penilaian_aksi_nyata_id
+        $daftar_nilai_guru = Penilaian::all();//print_r($daftar_nilai_guru);die();
         $list_periode = Penilaian::pluck('id');//print_r($daftar_nilai_guru);die();
+        // $id_penilaian = $daftar_nilai_guru[0]['id'];//print_r($id);die();
+        // $penilaian_aksi_nyata = PenilaianAksiNyata::all()->where('id_penilaian', $id_penilaian);
+        // //print_r($daftar_nilai_guru );die();
+        // $id_guru = $daftar_nilai_guru[0]['id_guru'];//die();
+        // $guru = Guru::all()->where('id', $id_guru);
         return view('penilaian.home', compact('daftar_nilai_guru', 'list_periode'));
     }
 

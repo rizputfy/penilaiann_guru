@@ -115,6 +115,8 @@ Route::post('penilaian_aksi_nyata/update/{id}', 'App\Http\Controllers\PenilaianA
 
 Route::post('penilaian_aksi_nyata/delete/{id}', 'App\Http\Controllers\PenilaianAksiNyataController@destroy')->name('penilaian_aksi_nyata.destroy');
 
+Route::get('penilaian_aksi_nyata/lihat_aksi_nyata', 'App\Http\Controllers\PenilaianAksiNyataController@lihat_aksi_nyata')->name('penilaian_aksi_nyata.lihat_aksi_nyata');
+
 //penilaian kehadiran 
 Route::get('penilaian_kehadiran', 'App\Http\Controllers\PenilaianKehadiranController@index');
 
@@ -150,7 +152,7 @@ Route::post('penilaian/store', 'App\Http\Controllers\PenilaianController@store')
 Route::get('penilaian/home', 'App\Http\Controllers\PenilaianController@home')->name('penilaian.home');
 
 //liat yang ke aski nyata
-Route::get('tampilan_guru', 'App\Http\Controllers\TampilanGuruController@index')->name('tampilan_guru.index');
+Route::get('tampilan_guru', 'App\Http\Controllers\GuruController@tampilan_guru')->name('guru.tampilan_guru');
 
 
 //user

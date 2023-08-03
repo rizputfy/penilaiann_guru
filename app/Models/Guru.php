@@ -15,6 +15,10 @@ class Guru extends Model
         return $this->belongsTo('App\Models\Unit', 'id_unit');
     }
 
+    public function user(){
+        return $this->belongsTo('App\Models\User', 'user_id');
+    }
+
     public function jabatan_struktural(){
         return $this->belongsTo('App\Models\JabatanStruktural', 'id_jabatan_struktural');
     }

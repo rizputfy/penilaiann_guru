@@ -25,12 +25,16 @@
             <td>{{ $gurus->nama}}</td>
             <td>{{ $gurus->alamat}}</td>
             <td>{{ $gurus->unit['nama_unit'] }}</td>
+            @if(empty( $gurus->jabatan_struktural['nama_struktural'] ))
+            <td></td>
+            @else
             <td>{{ $gurus->jabatan_struktural['nama_struktural'] }}</td>
+            @endif
             <td><a href="{{ route('guru.edit', $gurus->id) }}" class="btn btn-warning btn-sm">Edit</a></td>
             <td>
                 <form action="{{ route('guru.destroy', $gurus->id) }}" method="POST">
                     @csrf
-                    <button class="btn btn-warning btn-sm" onClick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
+                    <button class="btn btn-danger btn-sm" onClick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
                 </form>
             </td>
         </tr>

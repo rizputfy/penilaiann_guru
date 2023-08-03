@@ -43,19 +43,23 @@ class UserController extends Controller
         $user->level = $request->level;
         $user->save();
 
-       if($user->level == 'guru'){
-        $user_id = User::max('id');
-        $name = $request->name;
-        $list_unit = Unit::pluck('nama_unit', 'id');
-        $list_jabatan_struktural = JabatanStruktural::pluck('nama_struktural', 'id');
-        return view('guru/create', compact('name', 'user_id', 'list_unit', 'list_jabatan_struktural'));
-       }elseif($user->level == 'guru'){
-        $user_id = User::max('id');
-        $name = $request->name;
-        $list_unit = Unit::pluck('nama_unit', 'id');
-        $list_jabatan_struktural = JabatanStruktural::pluck('nama_struktural', 'id');
-        return view('guru/create', compact('name', 'user_id', 'list_unit', 'list_jabatan_struktural'));
-       }else{
+       if(($user->level !== 'Admin')&&($user->level !== 'Keuangan')){
+            $user_id = User::max('id');
+            $guru = Guru::all();
+            $level = $request->level;
+            $name = $request->name;
+            $list_unit = Unit::pluck('nama_unit', 'id');
+            $list_jabatan_struktural = JabatanStruktural::pluck('nama_struktural', 'id');
+            return view('guru/create', compact('guru', 'name', 'user_id', 'list_unit', 'list_jabatan_struktural','level'));
+       }
+    //    elseif($user->level == 'guru'){
+    //     $user_id = User::max('id');
+    //     $name = $request->name;
+    //     $list_unit = Unit::pluck('nama_unit', 'id');
+    //     $list_jabatan_struktural = JabatanStruktural::pluck('nama_struktural', 'id');
+    //     return view('guru/create', compact('name', 'user_id', 'list_unit', 'list_jabatan_struktural'));
+    //    }
+    else{
         return redirect('user');
        }
     }

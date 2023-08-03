@@ -61,8 +61,13 @@
                             <label for="level" class="col-md-4 col-form-label text-md-right" name="level"></label>
                             <div class="col-md-6">
                                 <select name="level" id="level" class="form-control">
-                                    <option value="Penilai">Penilai</option>
-                                    <option value="guru">guru</option>
+                                    <option value="">---</option>
+                                    <option value="1">Kepala Sekolah</option>
+                                    <option value="2">Penilai</option>
+                                    <option value="3">Divisi Pembinaan</option>
+                                    <option value="4">Keuangan</option>
+                                    <option value="5">Admin</option>
+                                    <option value="6">Guru</option>
                                 </select>
                             </div>
                         </div>
