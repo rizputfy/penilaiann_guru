@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 //Jenis Kehadiran
-Route::get('jenis_kehadiran', 'App\Http\Controllers\JenisKehadiranController@index');
+Route::get('jenis_kehadiran', 'App\Http\Controllers\JenisKehadiranController@index')->name('jenis_kehadiran.index');
 
 Route::get('jenis_kehadiran/create', 'App\Http\Controllers\JenisKehadiranController@create')->name('jenis_kehadiran.create');
 
@@ -37,7 +37,7 @@ Route::post('jenis_kehadiran/update/{id}', 'App\Http\Controllers\JenisKehadiranC
 Route::post('jenis_kehadiran/delete/{id}', 'App\Http\Controllers\JenisKehadiranController@destroy')->name('jenis_kehadiran.destroy');
 
 //Unit
-Route::get('unit', 'App\Http\Controllers\UnitController@index');
+Route::get('unit', 'App\Http\Controllers\UnitController@index')->name('unit.index');
 
 Route::get('unit/create', 'App\Http\Controllers\UnitController@create')->name('unit.create');
 
@@ -50,7 +50,7 @@ Route::post('unit/update/{id}', 'App\Http\Controllers\UnitController@update')->n
 Route::post('unit/delete/{id}', 'App\Http\Controllers\UnitController@destroy')->name('unit.destroy');
 
 //Periode
-Route::get('periode', 'App\Http\Controllers\PeriodeController@index');
+Route::get('periode', 'App\Http\Controllers\PeriodeController@index')->name('periode.index');
 
 Route::get('periode/create', 'App\Http\Controllers\PeriodeController@create')->name('periode.create');
 
@@ -63,7 +63,7 @@ Route::post('periode/update/{id}', 'App\Http\Controllers\PeriodeController@updat
 Route::post('periode/delete/{id}', 'App\Http\Controllers\PeriodeController@destroy')->name('periode.destroy');
 
 //jenis aksi nyata
-Route::get('jenis_aksi_nyata', 'App\Http\Controllers\JenisAksiNyataController@index');
+Route::get('jenis_aksi_nyata', 'App\Http\Controllers\JenisAksiNyataController@index')->name('jenis_aksi_nyata.index');
 
 Route::get('jenis_aksi_nyata/create', 'App\Http\Controllers\JenisAksiNyataController@create')->name('jenis_aksi_nyata.create');
 
@@ -76,7 +76,7 @@ Route::post('jenis_aksi_nyata/update/{id}', 'App\Http\Controllers\JenisAksiNyata
 Route::post('jenis_aksi_nyata/delete/{id}', 'App\Http\Controllers\JenisAksiNyataController@destroy')->name('jenis_aksi_nyata.destroy');
 
 //jenis pembelajaran
-Route::get('jenis_pembelajaran', 'App\Http\Controllers\JenisPembelajaranController@index');
+Route::get('jenis_pembelajaran', 'App\Http\Controllers\JenisPembelajaranController@index')->name('jenis_pembelajaran.index');
 
 Route::get('jenis_pembelajaran/create', 'App\Http\Controllers\JenisPembelajaranController@create')->name('jenis_pembelajaran.create');
 
@@ -89,7 +89,7 @@ Route::post('jenis_pembelajaran/update/{id}', 'App\Http\Controllers\JenisPembela
 Route::post('jenis_pembelajaran/delete/{id}', 'App\Http\Controllers\JenisPembelajaranController@destroy')->name('jenis_pembelajaran.destroy');
 
 //jabatan struktural
-Route::get('jabatan_struktural', 'App\Http\Controllers\JabatanStrukturalController@index');
+Route::get('jabatan_struktural', 'App\Http\Controllers\JabatanStrukturalController@index')->name('jabatan_struktural.index');
 
 Route::get('jabatan_struktural/create', 'App\Http\Controllers\JabatanStrukturalController@create')->name('jabatan_struktural.create');
 
@@ -118,7 +118,7 @@ Route::post('penilaian_aksi_nyata/delete/{id}', 'App\Http\Controllers\PenilaianA
 Route::get('penilaian_aksi_nyata/lihat_aksi_nyata', 'App\Http\Controllers\PenilaianAksiNyataController@lihat_aksi_nyata')->name('penilaian_aksi_nyata.lihat_aksi_nyata');
 
 //penilaian kehadiran 
-Route::get('penilaian_kehadiran', 'App\Http\Controllers\PenilaianKehadiranController@index');
+Route::get('penilaian_kehadiran', 'App\Http\Controllers\PenilaianKehadiranController@index')->name('penilaian_kehadiran.index');
 
 Route::get('penilaian_kehadiran/create', 'App\Http\Controllers\PenilaianKehadiranController@create')->name('PenilaianKehadiran.create');
 
@@ -146,6 +146,8 @@ Route::post('guru/delete/{id}', 'App\Http\Controllers\GuruController@destroy')->
 Route::get('penilaian', 'App\Http\Controllers\PenilaianController@index');
 
 Route::get('penilaian/create/{id}', 'App\Http\Controllers\PenilaianController@create')->name('penilaian.create');
+
+Route::get('penilaian/lihat_raport/{id}', 'App\Http\Controllers\PenilaianController@lihat_raport')->name('penilaian.lihat_raport');
 
 Route::post('penilaian/store', 'App\Http\Controllers\PenilaianController@store')->name('penilaian.store');
 

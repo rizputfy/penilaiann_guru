@@ -23,6 +23,7 @@
                 <th>Nama</th>
                 <th>Periode</th>
                 <th>Edit Data</th>
+                <th>Raport</th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +40,14 @@
                     @else
                         Periode aktif
                     @endif
-                    </td>  
+                </td> 
+                <td>
+                    @if(($penilaian->status)==1)
+                    <a href="{{ route('penilaian.lihat_raport', ['id'=>$penilaian->id]) }}" class="btn btn-primary btn-sm">Lihat Raport</a></td>
+                    @else
+                        
+                    @endif
+                </td> 
                 @endforeach
         </tbody>
     </table>

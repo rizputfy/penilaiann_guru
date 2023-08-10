@@ -22,7 +22,7 @@
             <td>
                 <form action="{{ route('jenis_aksi_nyata.destroy', $jenis_aksi_nyatas->id) }}" method="POST">
                     @csrf
-                    <button class="btn btn-warning btn-sm" onClick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
+                    <button class="btn btn-danger btn-sm" onClick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
                 </form>
             </td>
         </tr>

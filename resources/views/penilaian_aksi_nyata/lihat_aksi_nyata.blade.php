@@ -1,15 +1,14 @@
 @extends('layout.master')
 @section('content')
-<div class="container">
-    <h4>Data Jenis Periode</h4>
-    <p align="right"><a href="#" class="btn btn-primary">Tambahkan Jenis Periode</a></p>
+<div class="container mb-2 mt-2">
+    <h4>Nilai Aksi Nyata</h4>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Keterangan</th>
-                <th>Status Periode</th>
-                <th>Lihat Aksi Nyata</th>
+                <th>Data Periode</th>
+                <th>Status </th>
+                <th>Lihat Penilaian Aksi Nyata</th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +24,13 @@
                     @endif
                 </td>
 
-                <td><a href="{{ route('penilaian_aksi_nyata.create') }}" class="btn btn-warning btn-sm">Aksi Nyata</a></td>
+                <td>
+                    @if( $periodes->status==1 )
+                        <a href="{{ route('penilaian_aksi_nyata.create') }}" class="btn btn-primary btn-sm">Isi Aksi Nyata</a>
+                    @else
+                        Periode tidak aktif
+                    @endif
+            </td>
             </tr>
             @endforeach
         </tbody>
@@ -33,7 +38,7 @@
 
     <div class="pull-left">
         <strong>
-            Jumlah periode : {{ $jumlah_periode}}
+            Jumlah Penilaian : {{ $jumlah_periode}}
         </strong>
     </div>
 

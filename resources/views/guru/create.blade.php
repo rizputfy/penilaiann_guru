@@ -32,9 +32,9 @@
             <label>Jabatan Struktural</label>
             <select name="id_jabatan_struktural">
               <option value="">Jabatan Struktural</option>
-              @foreach ($guru as $key => $value)
-              <option value="{{ $key }}" {{$value->id_jabatan_struktural == $key ? 'selected' : ''}}>
-                {{ $value->jabatan_struktural->nama_struktural }}
+              @foreach ($list_jabatan_struktural as $key => $value)
+              <option value="{{ $key }}">
+                {{ $value }}
               </option>
               @endforeach
             </select>
